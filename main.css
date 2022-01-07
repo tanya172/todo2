@@ -1,5 +1,5 @@
 :root {
-	--dark: #8394af;
+	/* --dark: #8394af; */
 	--darker: #1F2937;
 	--darkest: #111827;
 	--grey: #6B7280;
@@ -58,9 +58,9 @@ input, button {
 	font-size: 20px;
 }
 
-#new-task-input::placeholder {
+/* #new-task-input::placeholder {
 	color: grey;
-}
+} */
 /******all about add task***/
 #new-task-submit {
 	/* color: var(--pink); */
@@ -138,9 +138,9 @@ main {
 	opacity: 0.8;
 }
 
-.task .actions button:active {
+/* .task .actions button:active {
 	opacity: 0.6;
-}
+} */
 
 .task .actions .edit {
 	background-image: linear-gradient(to right, var(--pink), var(--purple));
