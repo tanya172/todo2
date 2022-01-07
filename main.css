@@ -1,0 +1,153 @@
+:root {
+	--dark: #8394af;
+	--darker: #1F2937;
+	--darkest: #111827;
+	--grey: #6B7280;
+	--pink: #f5f1f3;
+	--purple: #dcdbdf;
+	/* --light: #EEE; */
+}
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Fira sans", sans-serif;
+}
+
+body {
+	display: flex;      /*updstion of task list and todo list*/
+	flex-direction: column;  
+	min-height: 100vh;
+	color: #FFF;
+	background:linear-gradient(135deg,aqua,rgb(172, 63, 191));
+}
+
+header {
+	padding: 16px 32px; /*todo spacing*/
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+header h1{ 
+    text-align: center;
+	font-size: 40px;
+	font-weight: 300;
+	color: #142744;
+	margin-bottom: 16px; /* for giving space b/w todo & the box */ 
+}
+
+#new-task-form {
+	display: flex; /* new task would come so it will be added acc. in horizontal*/
+}
+
+input, button {
+	appearance: none;
+	border: none;
+	outline: none;
+	background: none;
+}
+
+#new-task-input {
+	flex: 1 1 0%; /*the boxes & content were pushed away towards right*/
+	background-color: var(--darker); /* input box color*/
+	padding: 16px;
+	border-radius: 16px; /*i/p box corner*/
+	margin-right: 16px; 
+	 color: var(--light); /*for text written in i/p box*/
+	font-size: 20px;
+}
+
+#new-task-input::placeholder {
+	color: grey;
+}
+/******all about add task***/
+#new-task-submit {
+	/* color: var(--pink); */
+	font-size: 20px;
+	font-weight: 70;
+	background-image: linear-gradient(to right, var(--pink), var(--purple)); /*add task designing*/
+	-webkit-background-clip: text;
+	
+	cursor: pointer;
+	transition: 0.4s;
+}
+#new-task-submit:active {
+	opacity: 0.6;
+}
+
+main {
+	flex: 1 1 0%;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.task-list { /*all about dropdown task list*/
+	padding: 16px;
+}
+
+.task-list h2 {
+	font-size: 24px;
+	font-weight: 300;
+	color: black;
+	margin-bottom: 16px;
+}
+
+#tasks .task {
+	display: flex;
+	justify-content: space-between; /*spacing b/w task and edit delet button*/
+	background-color: var(--darkest);
+	padding: 16px;
+	border-radius: 16px;
+	margin-bottom: 16px;
+}
+
+.task .content {
+	flex: 1 1 0%; /*the content was being hidden after a certain lenght so flex was used so that text can be displayed whole in the box*/
+}
+
+
+.task .content .text {
+	color: var(--light);
+	font-size: 18px;
+	width: 100%;
+	display: block;
+	transition: 0.4s;
+}
+
+.task .content .text:not(:read-only) {
+	color: var(--pink);
+}
+
+.task .actions {
+	display: flex;
+	/* margin: 0 -0.5555rem; */
+}
+
+.task .actions button {
+	cursor: pointer;
+	margin: 0 8px;
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: uppercase;
+	transition: 0.4s;
+}
+
+.task .actions button:hover { /*hovering effect on edit and del*/
+	opacity: 0.8;
+}
+
+.task .actions button:active {
+	opacity: 0.6;
+}
+
+.task .actions .edit {
+	background-image: linear-gradient(to right, var(--pink), var(--purple));
+	-webkit-background-clip: text; /*for edit button*/
+	-webkit-text-fill-color: transparent; /*for edit highlight*/
+}
+
+.task .actions .delete {
+	color: crimson;
+}
